@@ -1,0 +1,10 @@
+{
+  "item.demasterfirstmod.demasterite_ingot": "DeMasterite Ingot",
+  "item.demasterfirstmod.raw_demasterite": "Raw DeMasterite",
+
+  "block.demasterfirstmod.demasterite_block": "Block of DeMasterite",
+  "block.demasterfirstmod.raw_demasterite_block": "Block of Raw DeMasterite",
+
+  "creativetab.demasterfirstmod.demasterite_items": "DeMasterite Items",
+  "creativetab.demasterfirstmod.demasterite_blocks": "DeMasterite Blocks"
+}

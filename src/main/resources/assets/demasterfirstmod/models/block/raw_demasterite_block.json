@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "demasterfirstmod:block/raw_demasterite_block"
+  }
+}
