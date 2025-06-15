@@ -1,6 +1,7 @@
 package net.demaster.demasterfirstmod.block;
 
 import net.demaster.demasterfirstmod.FirstMod;
+import net.demaster.demasterfirstmod.block.custom.MagicBlock;
 import net.demaster.demasterfirstmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -39,11 +40,18 @@ public class ModBlocks {
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)
             ));
-    public static final RegistryObject<Block> DEMASTERITE_DEEPSLATE_ORE = registerBlock("demasterite_deepslate_ore",
+    public static final RegistryObject<Block> DEEPSLATE_DEMASTERITE_ORE = registerBlock("deepslate_demasterite_ore",
             () -> new DropExperienceBlock(UniformInt.of(6, 10), BlockBehaviour.Properties.of()
                     .strength(5f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.DEEPSLATE)
+            ));
+
+    public static  final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            () -> new MagicBlock(BlockBehaviour.Properties.of()
+                    .strength(10f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)
             ));
 
 

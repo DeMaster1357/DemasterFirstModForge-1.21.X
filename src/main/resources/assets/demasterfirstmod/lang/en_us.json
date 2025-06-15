@@ -2,9 +2,24 @@
   "item.demasterfirstmod.demasterite_ingot": "DeMasterite Ingot",
   "item.demasterfirstmod.raw_demasterite": "Raw DeMasterite",
 
+  "item.demasterfirstmod.chisel": "Chisel",
+
+  "item.demasterfirstmod.demasterite_potato": "DeMasterite Potato",
+
+  "item.demasterfirstmod.fuel_rune": "Fuel Rune",
+
   "block.demasterfirstmod.demasterite_block": "Block of DeMasterite",
   "block.demasterfirstmod.raw_demasterite_block": "Block of Raw DeMasterite",
+  "block.demasterfirstmod.demasterite_ore": "DeMasterite Ore",
+  "block.demasterfirstmod.deepslate_demasterite_ore": "Deepslate DeMasterite Ore",
 
-  "creativetab.demasterfirstmod.demasterite_items": "DeMasterite Items",
-  "creativetab.demasterfirstmod.demasterite_blocks": "DeMasterite Blocks"
+  "block.demasterfirstmod.magic_block": "Magic Block",
+
+  "creativemodetab.demasterfirstmod.demasterite_items_tab": "DeMasterite Items",
+  "creativemodetab.demasterfirstmod.demasterite_blocks_tab": "DeMasterite Blocks",
+
+  "tooltip.demasterfirstmod.magic_block": "Un-smelt ores!",
+  "tooltip.demasterfirstmod.chisel": "Right click stone or endstone",
+
+  "tooltip.demasterfirstmod.demasterite_potato": "Makes you tough... sometimes"
 }
