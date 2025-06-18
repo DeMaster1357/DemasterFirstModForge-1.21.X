@@ -42,6 +42,19 @@ public class ModCreativeModeTabs {
 
                 output.accept(ModBlocks.MAGIC_BLOCK.get());
 
+                output.accept(ModBlocks.DEMASTERITE_STAIRS.get());
+                output.accept(ModBlocks.DEMASTERITE_SLAB.get());
+
+                output.accept(ModBlocks.DEMASTERITE_PRESSURE_PLATE.get());
+                output.accept(ModBlocks.DEMASTERITE_BUTTON.get());
+
+                output.accept(ModBlocks.DEMASTERITE_FENCE.get());
+                output.accept(ModBlocks.DEMASTERITE_FENCE_GATE.get());
+                output.accept(ModBlocks.DEMASTERITE_WALL.get());
+
+                output.accept(ModBlocks.DEMASTERITE_DOOR.get());
+                output.accept(ModBlocks.DEMASTERITE_TRAPDOOR.get());
+
             }).build());
 
     public static void register(IEventBus eventBus) {

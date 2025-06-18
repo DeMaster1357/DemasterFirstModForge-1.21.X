@@ -42,6 +42,37 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 5f, 1200, "demasterite");
         oreBlasting(pRecipeOutput, DEMASTERITE_SMELTABLES, RecipeCategory.MISC, ModItems.DEMASTERITE_INGOT.get(),
                 5f, 600, "demasterite");
+
+        stairBuilder(ModBlocks.DEMASTERITE_STAIRS.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
+        slab(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEMASTERITE_SLAB.get(), ModItems.DEMASTERITE_INGOT.get());
+
+        buttonBuilder(ModBlocks.DEMASTERITE_BUTTON.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
+        pressurePlate(pRecipeOutput, ModBlocks.DEMASTERITE_PRESSURE_PLATE.get(), ModItems.DEMASTERITE_INGOT.get());
+
+        fenceBuilder(ModBlocks.DEMASTERITE_FENCE.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
+        fenceGateBuilder(ModBlocks.DEMASTERITE_FENCE_GATE.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
+        wall(pRecipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DEMASTERITE_WALL.get(), ModItems.DEMASTERITE_INGOT.get());
+
+        doorBuilder(ModBlocks.DEMASTERITE_DOOR.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
+        trapdoorBuilder(ModBlocks.DEMASTERITE_TRAPDOOR.get(), Ingredient.of(ModItems.DEMASTERITE_INGOT.get()))
+                .group("demasterite")
+                .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
+                .save(pRecipeOutput);
     }
 
     protected static void oreSmelting(

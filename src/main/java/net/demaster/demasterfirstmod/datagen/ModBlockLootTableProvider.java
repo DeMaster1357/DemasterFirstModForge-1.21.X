@@ -32,12 +32,27 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.DEMASTERITE_BLOCK.get());
         dropSelf(ModBlocks.RAW_DEMASTERITE_BLOCK.get());
 
-        dropSelf(ModBlocks.MAGIC_BLOCK.get());
-
         this.add(ModBlocks.DEMASTERITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.DEMASTERITE_ORE.get(), ModItems.RAW_DEMASTERITE.get()));
         this.add(ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get(), ModItems.RAW_DEMASTERITE.get()));
+
+        dropSelf(ModBlocks.MAGIC_BLOCK.get());
+
+        dropSelf(ModBlocks.DEMASTERITE_STAIRS.get());
+        this.add(ModBlocks.DEMASTERITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.DEMASTERITE_SLAB.get()));
+
+        dropSelf(ModBlocks.DEMASTERITE_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.DEMASTERITE_BUTTON.get());
+
+        dropSelf(ModBlocks.DEMASTERITE_FENCE.get());
+        dropSelf(ModBlocks.DEMASTERITE_FENCE_GATE.get());
+        dropSelf(ModBlocks.DEMASTERITE_WALL.get());
+
+        this.add(ModBlocks.DEMASTERITE_DOOR.get(),
+            block -> createDoorTable(ModBlocks.DEMASTERITE_DOOR.get()));
+        dropSelf(ModBlocks.DEMASTERITE_TRAPDOOR.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

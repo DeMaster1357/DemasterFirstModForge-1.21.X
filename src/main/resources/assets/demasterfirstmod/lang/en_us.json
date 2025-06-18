@@ -15,6 +15,19 @@
 
   "block.demasterfirstmod.magic_block": "Magic Block",
 
+  "block.demasterfirstmod.demasterite_stairs": "DeMasterite Stairs",
+  "block.demasterfirstmod.demasterite_slab": "DeMasterite Slab",
+
+  "block.demasterfirstmod.demasterite_pressure_plate": "DeMasterite Pressure Plate",
+  "block.demasterfirstmod.demasterite_button": "DeMasterite Button",
+
+  "block.demasterfirstmod.demasterite_fence": "DeMasterite Fence",
+  "block.demasterfirstmod.demasterite_fence_gate": "DeMasterite Fence Gate",
+  "block.demasterfirstmod.demasterite_wall": "DeMasterite Wall",
+
+  "block.demasterfirstmod.demasterite_door": "DeMasterite Door",
+  "block.demasterfirstmod.demasterite_trapdoor": "DeMasterite Trapdoor",
+
   "creativemodetab.demasterfirstmod.demasterite_items_tab": "DeMasterite Items",
   "creativemodetab.demasterfirstmod.demasterite_blocks_tab": "DeMasterite Blocks",
 

@@ -36,5 +36,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEMASTERITE_ORE.get())
                 .add(ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get())
         ;
+
+        tag(BlockTags.FENCES)
+                .add(ModBlocks.DEMASTERITE_FENCE.get())
+        ;
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.DEMASTERITE_FENCE_GATE.get())
+        ;
+
+        tag(BlockTags.WALLS)
+                .add(ModBlocks.DEMASTERITE_WALL.get())
+        ;
     }
 }

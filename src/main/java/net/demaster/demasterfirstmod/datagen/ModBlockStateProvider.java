@@ -3,9 +3,11 @@ package net.demaster.demasterfirstmod.datagen;
 import net.demaster.demasterfirstmod.FirstMod;
 import net.demaster.demasterfirstmod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModBlockStateProvider extends BlockStateProvider {
@@ -22,10 +24,78 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.DEEPSLATE_DEMASTERITE_ORE);
 
         blockWithItem(ModBlocks.MAGIC_BLOCK);
+
+        stairsBlockWithItem(ModBlocks.DEMASTERITE_STAIRS, ModBlocks.DEMASTERITE_BLOCK);
+        slabBlockWithItem(ModBlocks.DEMASTERITE_SLAB, ModBlocks.DEMASTERITE_BLOCK);
+
+        pressurePlateBlockWithItem(ModBlocks.DEMASTERITE_PRESSURE_PLATE, ModBlocks.DEMASTERITE_BLOCK);
+        buttonBlockWithItem(ModBlocks.DEMASTERITE_BUTTON, ModBlocks.DEMASTERITE_BLOCK);
+
+        fenceBlockWithItem(ModBlocks.DEMASTERITE_FENCE, ModBlocks.DEMASTERITE_BLOCK);
+        fenceGateBlockWithItem(ModBlocks.DEMASTERITE_FENCE_GATE, ModBlocks.DEMASTERITE_BLOCK);
+        wallBlockWithItem(ModBlocks.DEMASTERITE_WALL, ModBlocks.DEMASTERITE_BLOCK);
+
+        doorBlockWithItem(ModBlocks.DEMASTERITE_DOOR);
+        trapdoorBlockWithItem(ModBlocks.DEMASTERITE_TRAPDOOR);
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
-        simpleBlock(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
-        simpleBlockItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+        simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));
+    }
+
+    private void blockItem(RegistryObject<? extends Block> blockRegistryObject) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath())));
+    }
+
+    private void blockItem(RegistryObject<? extends Block> blockRegistryObject, String appendix) {
+        simpleBlockItem(blockRegistryObject.get(), new ModelFile.UncheckedModelFile(modLoc("block/" +
+                ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath() + appendix)));
+    }
+
+    private void stairsBlockWithItem(RegistryObject<StairBlock> stairBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        stairsBlock(stairBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+        blockItem(stairBlockRegistryObject);
+    }
+
+    private void slabBlockWithItem(RegistryObject<SlabBlock> slabBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        slabBlock(slabBlockRegistryObject.get(), blockTexture(parentBlock.get()), blockTexture(parentBlock.get()));
+        blockItem(slabBlockRegistryObject);
+    }
+
+    private void pressurePlateBlockWithItem(RegistryObject<PressurePlateBlock> pressurePlateBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        pressurePlateBlock(pressurePlateBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+        blockItem(pressurePlateBlockRegistryObject);
+    }
+
+    private void buttonBlockWithItem(RegistryObject<ButtonBlock> buttonBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        buttonBlock(buttonBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+    }
+
+    private void fenceBlockWithItem(RegistryObject<FenceBlock> fenceBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        fenceBlock(fenceBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+    }
+
+    private void fenceGateBlockWithItem(RegistryObject<FenceGateBlock> fenceGateBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        fenceGateBlock(fenceGateBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+        blockItem(fenceGateBlockRegistryObject);
+    }
+
+    private void wallBlockWithItem(RegistryObject<WallBlock> wallBlockRegistryObject, RegistryObject<Block> parentBlock) {
+        wallBlock(wallBlockRegistryObject.get(), blockTexture(parentBlock.get()));
+    }
+
+    private void doorBlockWithItem(RegistryObject<DoorBlock> doorBlockRegistryObject) {
+        doorBlockWithRenderType(doorBlockRegistryObject.get(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(doorBlockRegistryObject.get()).getPath() + "_bottom"),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(doorBlockRegistryObject.get()).getPath() + "_top"),
+                "cutout");
+    }
+
+    private void trapdoorBlockWithItem(RegistryObject<TrapDoorBlock> trapdoorBlockRegistryObject) {
+        trapdoorBlockWithRenderType(trapdoorBlockRegistryObject.get(),
+                modLoc("block/" + ForgeRegistries.BLOCKS.getKey(trapdoorBlockRegistryObject.get()).getPath()),
+                true, "cutout");
+        blockItem(trapdoorBlockRegistryObject, "_bottom");
     }
 }
