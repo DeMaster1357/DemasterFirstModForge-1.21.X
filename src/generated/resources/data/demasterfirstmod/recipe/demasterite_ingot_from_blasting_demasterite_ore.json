@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 600,
+  "experience": 5.0,
+  "group": "demasterite",
+  "ingredient": {
+    "item": "demasterfirstmod:demasterite_ore"
+  },
+  "result": {
+    "id": "demasterfirstmod:demasterite_ingot"
+  }
+}

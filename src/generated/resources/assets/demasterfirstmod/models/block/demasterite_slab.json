@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "demasterfirstmod:block/demasterite_block",
+    "side": "demasterfirstmod:block/demasterite_block",
+    "top": "demasterfirstmod:block/demasterite_block"
+  }
+}

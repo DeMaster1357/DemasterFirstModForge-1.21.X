@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "light_level=0": {
+      "model": "demasterfirstmod:block/demasterite_lamp_off"
+    },
+    "light_level=1": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=10": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=11": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=12": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=13": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=14": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=15": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=2": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=3": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=4": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=5": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=6": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=7": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=8": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    },
+    "light_level=9": {
+      "model": "demasterfirstmod:block/demasterite_lamp_on"
+    }
+  }
+}

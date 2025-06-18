@@ -1,6 +1,7 @@
 package net.demaster.demasterfirstmod.block;
 
 import net.demaster.demasterfirstmod.FirstMod;
+import net.demaster.demasterfirstmod.block.custom.DeMasteriteLampBlock;
 import net.demaster.demasterfirstmod.block.custom.MagicBlock;
 import net.demaster.demasterfirstmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -59,6 +60,15 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             () -> new MagicBlock(BlockBehaviour.Properties.of()
                     .strength(10f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.METAL)
+            ));
+    //</editor-fold>
+    //<editor-fold desc="DEMASTERITE_LAMP">
+    public static final RegistryObject<Block> DEMASTERITE_LAMP = registerBlock("demasterite_lamp",
+            () -> new DeMasteriteLampBlock(BlockBehaviour.Properties.of()
+                    .strength(6f)
+                    .lightLevel(state -> state.getValue(DeMasteriteLampBlock.LIGHT_LEVEL))
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.METAL)
             ));
@@ -142,6 +152,7 @@ public class ModBlocks {
                     .noOcclusion()
             ));
     //</editor-fold>
+
 
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {

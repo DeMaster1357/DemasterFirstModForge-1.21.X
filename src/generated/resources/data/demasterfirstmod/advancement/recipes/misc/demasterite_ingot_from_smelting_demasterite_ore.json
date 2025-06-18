@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_demasterite_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": "demasterfirstmod:demasterite_ore"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "demasterfirstmod:demasterite_ingot_from_smelting_demasterite_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_demasterite_ore"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "demasterfirstmod:demasterite_ingot_from_smelting_demasterite_ore"
+    ]
+  }
+}

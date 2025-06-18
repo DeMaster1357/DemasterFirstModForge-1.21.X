@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "demasterite",
+  "key": {
+    "#": {
+      "item": "demasterfirstmod:demasterite_ingot"
+    }
+  },
+  "pattern": [
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "demasterfirstmod:demasterite_trapdoor"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "demasterfirstmod:block/demasterite_block"
+  }
+}

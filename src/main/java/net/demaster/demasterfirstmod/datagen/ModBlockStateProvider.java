@@ -2,13 +2,19 @@ package net.demaster.demasterfirstmod.datagen;
 
 import net.demaster.demasterfirstmod.FirstMod;
 import net.demaster.demasterfirstmod.block.ModBlocks;
+import net.demaster.demasterfirstmod.block.custom.DeMasteriteLampBlock;
 import net.minecraft.data.PackOutput;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.properties.Property;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import java.util.function.Function;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -37,7 +43,26 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         doorBlockWithItem(ModBlocks.DEMASTERITE_DOOR);
         trapdoorBlockWithItem(ModBlocks.DEMASTERITE_TRAPDOOR);
+
+        conditionalBlockWithItem(ModBlocks.DEMASTERITE_LAMP, DeMasteriteLampBlock.LIGHT_LEVEL, lightLevel -> lightLevel != 0, "_on", "_off");
     }
+
+    private <T extends Comparable<T>> void conditionalBlockWithItem(RegistryObject<Block> blockRegistryObject, Property<T> property, Function<T, Boolean> condition,
+                                                                    String trueSuffix, String falseSuffix) {
+        String name = ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath();
+
+        getVariantBuilder(blockRegistryObject.get()).forAllStates(state -> {
+            String suffix = condition.apply(state.getValue(property)) ? trueSuffix : falseSuffix;
+            return new ConfiguredModel[] {
+                    new ConfiguredModel(models().cubeAll(name + suffix,
+                            ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "block/" + name + suffix)))
+            };
+        });
+
+        simpleBlockItem(blockRegistryObject.get(), models().cubeAll(name + trueSuffix,
+                ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "block/" + name + trueSuffix)));
+    }
+
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {
         simpleBlockWithItem(blockRegistryObject.get(), cubeAll(blockRegistryObject.get()));

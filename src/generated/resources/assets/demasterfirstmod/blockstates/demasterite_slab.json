@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "demasterfirstmod:block/demasterite_slab"
+    },
+    "type=double": {
+      "model": "demasterfirstmod:block/demasterite_block"
+    },
+    "type=top": {
+      "model": "demasterfirstmod:block/demasterite_slab_top"
+    }
+  }
+}

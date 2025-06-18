@@ -38,6 +38,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createOreDrop(ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get(), ModItems.RAW_DEMASTERITE.get()));
 
         dropSelf(ModBlocks.MAGIC_BLOCK.get());
+        dropSelf(ModBlocks.DEMASTERITE_LAMP.get());
 
         dropSelf(ModBlocks.DEMASTERITE_STAIRS.get());
         this.add(ModBlocks.DEMASTERITE_SLAB.get(),

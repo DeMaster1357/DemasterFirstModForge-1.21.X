@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "redstone",
+  "group": "demasterite",
+  "ingredients": [
+    {
+      "item": "demasterfirstmod:demasterite_ingot"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "demasterfirstmod:demasterite_button"
+  }
+}

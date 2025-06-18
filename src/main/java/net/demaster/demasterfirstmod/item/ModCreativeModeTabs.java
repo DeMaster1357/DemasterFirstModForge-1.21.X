@@ -41,6 +41,7 @@ public class ModCreativeModeTabs {
                 output.accept(ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get());
 
                 output.accept(ModBlocks.MAGIC_BLOCK.get());
+                output.accept(ModBlocks.DEMASTERITE_LAMP.get());
 
                 output.accept(ModBlocks.DEMASTERITE_STAIRS.get());
                 output.accept(ModBlocks.DEMASTERITE_SLAB.get());
