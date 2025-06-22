@@ -15,6 +15,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 import java.util.function.Function;
+import java.util.function.Predicate;
 
 public class ModBlockStateProvider extends BlockStateProvider {
     public ModBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
@@ -47,12 +48,12 @@ public class ModBlockStateProvider extends BlockStateProvider {
         conditionalBlockWithItem(ModBlocks.DEMASTERITE_LAMP, DeMasteriteLampBlock.LIGHT_LEVEL, lightLevel -> lightLevel != 0, "_on", "_off");
     }
 
-    private <T extends Comparable<T>> void conditionalBlockWithItem(RegistryObject<Block> blockRegistryObject, Property<T> property, Function<T, Boolean> condition,
+    private <T extends Comparable<T>> void conditionalBlockWithItem(RegistryObject<Block> blockRegistryObject, Property<T> property, Predicate<T> condition,
                                                                     String trueSuffix, String falseSuffix) {
         String name = ForgeRegistries.BLOCKS.getKey(blockRegistryObject.get()).getPath();
 
         getVariantBuilder(blockRegistryObject.get()).forAllStates(state -> {
-            String suffix = condition.apply(state.getValue(property)) ? trueSuffix : falseSuffix;
+            String suffix = condition.test(state.getValue(property)) ? trueSuffix : falseSuffix;
             return new ConfiguredModel[] {
                     new ConfiguredModel(models().cubeAll(name + suffix,
                             ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "block/" + name + suffix)))

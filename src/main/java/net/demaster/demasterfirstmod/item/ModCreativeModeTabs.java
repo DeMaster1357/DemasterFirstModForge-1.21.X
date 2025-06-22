@@ -27,6 +27,14 @@ public class ModCreativeModeTabs {
 
                 output.accept(ModItems.FUEL_RUNE.get());
 
+                output.accept(ModItems.DEMASTERITE_SWORD.get());
+                output.accept(ModItems.DEMASTERITE_SHOVEL.get());
+                output.accept(ModItems.DEMASTERITE_PICKAXE.get());
+                output.accept(ModItems.DEMASTERITE_AXE.get());
+                output.accept(ModItems.DEMASTERITE_HOE.get());
+
+                output.accept(ModItems.DEMASTERITE_HAMMER.get());
+
             }).build());
 
     public static final RegistryObject<CreativeModeTab> DEMASTERITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("demasterite_blocks_tab",

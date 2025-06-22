@@ -6,6 +6,8 @@ import net.demaster.demasterfirstmod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
@@ -26,10 +28,10 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 ModBlocks.DEEPSLATE_DEMASTERITE_ORE.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.DEMASTERITE_BLOCK.get())
-                .define('A', ModItems.DEMASTERITE_INGOT.get())
-                .pattern("AAA")
-                .pattern("AAA")
-                .pattern("AAA")
+                .define('D', ModItems.DEMASTERITE_INGOT.get())
+                .pattern("DDD")
+                .pattern("DDD")
+                .pattern("DDD")
                 .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
                 .save(pRecipeOutput);
 
@@ -73,7 +75,46 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .group("demasterite")
                 .unlockedBy(getHasName(ModItems.DEMASTERITE_INGOT.get()), has(ModItems.DEMASTERITE_INGOT.get()))
                 .save(pRecipeOutput);
+
+        swordCrafting(pRecipeOutput, ModItems.DEMASTERITE_SWORD.get(), ModItems.DEMASTERITE_INGOT.get());
+        pickaxeCrafting(pRecipeOutput, ModItems.DEMASTERITE_PICKAXE.get(), ModItems.DEMASTERITE_INGOT.get());
+        shovelCrafting(pRecipeOutput, ModItems.DEMASTERITE_SHOVEL.get(), ModItems.DEMASTERITE_INGOT.get());
+        axeCrafting(pRecipeOutput, ModItems.DEMASTERITE_AXE.get(), ModItems.DEMASTERITE_INGOT.get());
+        hoeCrafting(pRecipeOutput, ModItems.DEMASTERITE_HOE.get(), ModItems.DEMASTERITE_INGOT.get());
     }
+
+    private static void swordCrafting(RecipeOutput pRecipeOutput, Item result, Item material) {
+        toolCrafting(pRecipeOutput, result, material, new String[]{" X ", " X ", " S "});
+    }
+
+    private static void pickaxeCrafting(RecipeOutput pRecipeOutput, Item result, Item material) {
+        toolCrafting(pRecipeOutput, result, material, new String[]{"XXX", " S ", " S "});
+    }
+
+    private static void shovelCrafting(RecipeOutput pRecipeOutput, Item result, Item material) {
+        toolCrafting(pRecipeOutput, result, material, new String[]{" X ", " S ", " S "});
+    }
+
+    private static void axeCrafting(RecipeOutput pRecipeOutput, Item result, Item material) {
+        toolCrafting(pRecipeOutput, result, material, new String[]{" XX", " SX", " S "});
+    }
+
+    private static void hoeCrafting(RecipeOutput pRecipeOutput, Item result, Item material) {
+        toolCrafting(pRecipeOutput, result, material, new String[]{" XX", " S ", " S "});
+    }
+
+    private static void toolCrafting(RecipeOutput pRecipeOutput, Item result, Item material, String[] craftingGrid) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.TOOLS, result)
+                .define('X', material)
+                .define('S', Items.STICK)
+                .pattern(craftingGrid[0])
+                .pattern(craftingGrid[1])
+                .pattern(craftingGrid[2])
+                .unlockedBy(getHasName(material), has(material))
+                .unlockedBy(getHasName(Items.STICK), has(Items.STICK))
+                .save(pRecipeOutput);
+    }
+
 
     protected static void oreSmelting(
             RecipeOutput pRecipeOutput,

@@ -8,6 +8,14 @@
 
   "item.demasterfirstmod.fuel_rune": "Fuel Rune",
 
+  "item.demasterfirstmod.demasterite_sword": "DeMasterite Sword",
+  "item.demasterfirstmod.demasterite_pickaxe": "DeMasterite Pickaxe",
+  "item.demasterfirstmod.demasterite_shovel": "DeMasterite Shovel",
+  "item.demasterfirstmod.demasterite_axe": "DeMasterite Axe",
+  "item.demasterfirstmod.demasterite_hoe": "DeMasterite Hoe",
+
+  "item.demasterfirstmod.demasterite_hammer": "DeMasterite Hammer",
+
   "block.demasterfirstmod.demasterite_block": "Block of DeMasterite",
   "block.demasterfirstmod.raw_demasterite_block": "Block of Raw DeMasterite",
   "block.demasterfirstmod.demasterite_ore": "DeMasterite Ore",
@@ -34,6 +42,7 @@
 
   "tooltip.demasterfirstmod.magic_block": "Un-smelt ores!",
   "tooltip.demasterfirstmod.chisel": "Right click stone or endstone",
+  "tooltip.demasterfirstmod.hammer": "Mines in an area",
 
   "tooltip.demasterfirstmod.demasterite_potato": "Makes you tough... sometimes"
 }

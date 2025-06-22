@@ -1,5 +1,6 @@
 package net.demaster.demasterfirstmod.item.custom;
 
+import net.demaster.demasterfirstmod.component.ModDataComponentTypes;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -43,6 +44,8 @@ public class ChiselItem extends Item {
                         item -> pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 level.playSound(null, pContext.getClickedPos(), SoundEvents.GRINDSTONE_USE, SoundSource.BLOCKS);
+
+                pContext.getItemInHand().set(ModDataComponentTypes.LAST_USED_COORDINATES.get(), pContext.getClickedPos());
             }
         }
 
@@ -52,6 +55,11 @@ public class ChiselItem extends Item {
     @Override
     public void appendHoverText(ItemStack pStack, Item.TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
         pTooltipComponents.add(Component.translatable("tooltip.demasterfirstmod.chisel"));
+
+        if (pStack.get(ModDataComponentTypes.LAST_USED_COORDINATES.get()) != null) {
+            pTooltipComponents.add(Component.literal("last block changed at " + pStack.get(ModDataComponentTypes.LAST_USED_COORDINATES.get())));
+        }
+
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
     }
 }

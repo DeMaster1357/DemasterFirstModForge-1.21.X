@@ -3,10 +3,10 @@ package net.demaster.demasterfirstmod.item;
 import net.demaster.demasterfirstmod.FirstMod;
 import net.demaster.demasterfirstmod.item.custom.ChiselItem;
 import net.demaster.demasterfirstmod.item.custom.FuelItem;
+import net.demaster.demasterfirstmod.item.custom.HammerItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -38,7 +38,48 @@ public class ModItems {
     public static final RegistryObject<Item> FUEL_RUNE = ITEMS.register("fuel_rune",
             () -> new FuelItem(new Item.Properties(), 2400));
 
+    public static final RegistryObject<Item> DEMASTERITE_SWORD = registerSword("demasterite_sword", ModToolTiers.DEMASTERITE);
+    public static final RegistryObject<Item> DEMASTERITE_PICKAXE = registerPickaxe("demasterite_pickaxe", ModToolTiers.DEMASTERITE);
+    public static final RegistryObject<Item> DEMASTERITE_SHOVEL = registerShovel("demasterite_shovel", ModToolTiers.DEMASTERITE);
+    public static final RegistryObject<Item> DEMASTERITE_AXE = registerAxe("demasterite_axe", ModToolTiers.DEMASTERITE);
+    public static final RegistryObject<Item> DEMASTERITE_HOE = registerHoe("demasterite_hoe", ModToolTiers.DEMASTERITE);
+
+    public static final RegistryObject<Item> DEMASTERITE_HAMMER = ITEMS.register("demasterite_hammer",
+            () -> new HammerItem(ModToolTiers.DEMASTERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()
+                    .attributes(PickaxeItem.createAttributes(ModToolTiers.DEMASTERITE, 7, -3.5f))));
+
+
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
+    }
+
+    public static RegistryObject<Item> registerSword(String name, Tier pTier) {
+        return ITEMS.register(name,
+            () -> new SwordItem(pTier, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(pTier, 3, -2.4f))));
+    }
+
+    public static RegistryObject<Item> registerPickaxe(String name, Tier pTier) {
+        return ITEMS.register(name,
+                () -> new PickaxeItem(pTier, new Item.Properties()
+                        .attributes(PickaxeItem.createAttributes(pTier, 1, -2.0f))));
+    }
+
+    public static RegistryObject<Item> registerShovel(String name, Tier pTier) {
+        return ITEMS.register(name,
+                () -> new ShovelItem(pTier, new Item.Properties()
+                        .attributes(ShovelItem.createAttributes(pTier, 1.5f, -3.0f))));
+    }
+
+    public static RegistryObject<Item> registerAxe(String name, Tier pTier) {
+        return ITEMS.register(name,
+                () -> new AxeItem(pTier, new Item.Properties()
+                        .attributes(AxeItem.createAttributes(pTier, 6, -3.2f))));
+    }
+
+    public static RegistryObject<Item> registerHoe(String name, Tier pTier) {
+        return ITEMS.register(name,
+                () -> new HoeItem(pTier, new Item.Properties()
+                        .attributes(HoeItem.createAttributes(pTier, 0, -3.0f))));
     }
 }

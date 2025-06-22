@@ -1,0 +1,8 @@
+// 1.21	2025-06-22T09:41:14.8796575	Tags for minecraft:block mod id demasterfirstmod
+35133e95f1c8fdd7a1c21afcc231fc0bffefb9a8 data/demasterfirstmod/tags/block/incorrect_for_demasterite_tool.json
+59fe555ca70e82ce5c52d3a3f50635633c1a8641 data/demasterfirstmod/tags/block/needs_demasterite_tool.json
+3ab70d4239ca6e5be28da12003fa3ffbf0f40aea data/minecraft/tags/block/fences.json
+ff6261e76ede8c87647c76c93b767d25de87a999 data/minecraft/tags/block/fence_gates.json
+fef51178dfcc06866cfd098b178f2e97195f2cee data/minecraft/tags/block/mineable/pickaxe.json
+47f3b607cd2114aa24550654123990d2a46115f5 data/minecraft/tags/block/needs_diamond_tool.json
+2895e4446a031d53a2dba674198d5cbdae747b40 data/minecraft/tags/block/walls.json

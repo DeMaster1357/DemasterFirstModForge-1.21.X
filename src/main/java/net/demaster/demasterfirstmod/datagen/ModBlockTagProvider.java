@@ -2,6 +2,7 @@ package net.demaster.demasterfirstmod.datagen;
 
 import net.demaster.demasterfirstmod.FirstMod;
 import net.demaster.demasterfirstmod.block.ModBlocks;
+import net.demaster.demasterfirstmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -26,10 +27,6 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.MAGIC_BLOCK.get())
         ;
 
-        tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.MAGIC_BLOCK.get())
-        ;
-
         tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.DEMASTERITE_BLOCK.get())
                 .add(ModBlocks.RAW_DEMASTERITE_BLOCK.get())
@@ -47,6 +44,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
 
         tag(BlockTags.WALLS)
                 .add(ModBlocks.DEMASTERITE_WALL.get())
+        ;
+
+        tag(ModTags.Blocks.NEEDS_DEMASTERITE_TOOL)
+                .add(ModBlocks.MAGIC_BLOCK.get())
+                .addTag(BlockTags.NEEDS_DIAMOND_TOOL)
+        ;
+        tag(ModTags.Blocks.INCORRECT_FOR_DEMASTERITE_TOOL)
+
         ;
     }
 }

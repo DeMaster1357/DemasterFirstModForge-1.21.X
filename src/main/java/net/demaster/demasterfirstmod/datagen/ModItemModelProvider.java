@@ -5,6 +5,7 @@ import net.demaster.demasterfirstmod.block.ModBlocks;
 import net.demaster.demasterfirstmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
@@ -33,6 +34,20 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.DEMASTERITE_WALL, ModBlocks.DEMASTERITE_BLOCK);
 
         simpleBlockItem(ModBlocks.DEMASTERITE_DOOR);
+
+        handHeldItem(ModItems.DEMASTERITE_SWORD);
+        handHeldItem(ModItems.DEMASTERITE_PICKAXE);
+        handHeldItem(ModItems.DEMASTERITE_SHOVEL);
+        handHeldItem(ModItems.DEMASTERITE_AXE);
+        handHeldItem(ModItems.DEMASTERITE_HOE);
+
+        handHeldItem(ModItems.DEMASTERITE_HAMMER);
+    }
+
+    public ItemModelBuilder handHeldItem(RegistryObject<Item> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/handheld")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(FirstMod.MOD_ID, "item/" + item.getId().getPath()));
     }
 
     public void buttonItem(RegistryObject<? extends Block> block, RegistryObject<Block> parentBlock) {
