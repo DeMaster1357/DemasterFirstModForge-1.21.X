@@ -3,6 +3,7 @@ package net.demaster.demasterfirstmod;
 import com.mojang.logging.LogUtils;
 import net.demaster.demasterfirstmod.block.ModBlocks;
 import net.demaster.demasterfirstmod.component.ModDataComponentTypes;
+import net.demaster.demasterfirstmod.enchantment.ModEnchantmentEffects;
 import net.demaster.demasterfirstmod.item.ModCreativeModeTabs;
 import net.demaster.demasterfirstmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -53,6 +54,8 @@ public class FirstMod {
         ModBlocks.register(modEventBus);
 
         ModDataComponentTypes.register(modEventBus);
+
+        ModEnchantmentEffects.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

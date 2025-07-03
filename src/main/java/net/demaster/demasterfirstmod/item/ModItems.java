@@ -48,6 +48,19 @@ public class ModItems {
             () -> new HammerItem(ModToolTiers.DEMASTERITE, BlockTags.MINEABLE_WITH_PICKAXE, new Item.Properties()
                     .attributes(PickaxeItem.createAttributes(ModToolTiers.DEMASTERITE, 7, -3.5f))));
 
+    public static final RegistryObject<Item> DEMASTERITE_HELMET = ITEMS.register("demasterite_helmet",
+            () -> new ArmorItem(ModArmorMaterials.DEMASTERITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET,
+                    new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(18))));
+    public static final RegistryObject<Item> DEMASTERITE_CHESTPLATE = ITEMS.register("demasterite_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.DEMASTERITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE,
+                    new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(18))));
+    public static final RegistryObject<Item> DEMASTERITE_LEGGINGS = ITEMS.register("demasterite_leggings",
+            () -> new ArmorItem(ModArmorMaterials.DEMASTERITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS,
+                    new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(18))));
+    public static final RegistryObject<Item> DEMASTERITE_BOOTS = ITEMS.register("demasterite_boots",
+            () -> new ArmorItem(ModArmorMaterials.DEMASTERITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS,
+                    new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(18))));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

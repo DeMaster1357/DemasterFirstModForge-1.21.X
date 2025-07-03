@@ -16,6 +16,11 @@
 
   "item.demasterfirstmod.demasterite_hammer": "DeMasterite Hammer",
 
+  "item.demasterfirstmod.demasterite_helmet": "DeMasterite Helmet",
+  "item.demasterfirstmod.demasterite_chestplate": "DeMasterite Chestplate",
+  "item.demasterfirstmod.demasterite_leggings": "DeMasterite Leggings",
+  "item.demasterfirstmod.demasterite_boots": "DeMasterite Boots",
+
   "block.demasterfirstmod.demasterite_block": "Block of DeMasterite",
   "block.demasterfirstmod.raw_demasterite_block": "Block of Raw DeMasterite",
   "block.demasterfirstmod.demasterite_ore": "DeMasterite Ore",
@@ -36,6 +41,8 @@
 
   "block.demasterfirstmod.demasterite_door": "DeMasterite Door",
   "block.demasterfirstmod.demasterite_trapdoor": "DeMasterite Trapdoor",
+
+  "enchantment.demasterfirstmod.lightning_striker": "Lightning Striker",
 
   "creativemodetab.demasterfirstmod.demasterite_items_tab": "DeMasterite Items",
   "creativemodetab.demasterfirstmod.demasterite_blocks_tab": "DeMasterite Blocks",

@@ -7,8 +7,10 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
@@ -39,6 +41,32 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ModTags.Items.SAMPLE_TAG)
                 .add(ModItems.CHISEL.get())
+        ;
+
+        addEnchantableTrimmableArmor(ModItems.DEMASTERITE_HELMET, ModItems.DEMASTERITE_CHESTPLATE, ModItems.DEMASTERITE_LEGGINGS, ModItems.DEMASTERITE_BOOTS);
+    }
+
+    private void addEnchantableTrimmableArmor(RegistryObject<Item> headArmor, RegistryObject<Item> chestArmor, RegistryObject<Item> legArmor, RegistryObject<Item> footArmor) {
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(headArmor.get())
+                .add(chestArmor.get())
+                .add(legArmor.get())
+                .add(footArmor.get());
+
+        tag(ItemTags.HEAD_ARMOR_ENCHANTABLE)
+                .add(headArmor.get())
+        ;
+
+        tag(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                .add(chestArmor.get())
+        ;
+
+        tag(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                .add(legArmor.get())
+        ;
+
+        tag(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+                .add(footArmor.get())
         ;
     }
 }

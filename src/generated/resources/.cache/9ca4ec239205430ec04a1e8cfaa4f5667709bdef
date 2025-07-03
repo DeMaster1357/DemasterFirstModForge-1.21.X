@@ -1,7 +1,12 @@
-// 1.21	2025-06-22T09:48:38.7698957	Tags for minecraft:item mod id demasterfirstmod
+// 1.21	2025-06-22T19:29:40.7524446	Tags for minecraft:item mod id demasterfirstmod
 ecce55a43c2ada980cc28a0de535ae8543780c3f data/demasterfirstmod/tags/item/sample_tag.json
 00366163e7b24846dade0106239e4c8f54e33e63 data/minecraft/tags/item/axes.json
+ee2bc8ac7360723b3a70f113f1a5273f1fb9b478 data/minecraft/tags/item/enchantable/chest_armor.json
+dcd2e6651c7e88026f754436a11bd17f4be87c26 data/minecraft/tags/item/enchantable/foot_armor.json
+b32b6b6e2eb3231941c13f59926c406664fa3119 data/minecraft/tags/item/enchantable/head_armor.json
+267483152ee203f3e1c7612f7da0c39c9451fbbf data/minecraft/tags/item/enchantable/leg_armor.json
 8ae75572d0adec8967b8dad50fd945f10147b413 data/minecraft/tags/item/hoes.json
 63b335ea95bf4b324ad138feb8639ef1ed6b9bb3 data/minecraft/tags/item/pickaxes.json
 1b3c4be91b042d02ec41c165c1957cc301305da1 data/minecraft/tags/item/shovels.json
 6727324ec0305135f2d1c7659f7074aec30241f1 data/minecraft/tags/item/swords.json
+15befbb5cdd6231bae4c84daac090d750bbc8922 data/minecraft/tags/item/trimmable_armor.json

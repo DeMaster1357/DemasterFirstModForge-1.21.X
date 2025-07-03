@@ -35,6 +35,11 @@ public class ModCreativeModeTabs {
 
                 output.accept(ModItems.DEMASTERITE_HAMMER.get());
 
+                output.accept(ModItems.DEMASTERITE_HELMET.get());
+                output.accept(ModItems.DEMASTERITE_CHESTPLATE.get());
+                output.accept(ModItems.DEMASTERITE_LEGGINGS.get());
+                output.accept(ModItems.DEMASTERITE_BOOTS.get());
+
             }).build());
 
     public static final RegistryObject<CreativeModeTab> DEMASTERITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("demasterite_blocks_tab",
